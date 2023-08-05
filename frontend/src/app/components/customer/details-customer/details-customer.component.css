@@ -1,0 +1,27 @@
+.img-container {
+    width: 250px;
+    height: 250px;
+    border: 1px solid aqua;
+}
+
+.img {
+    width: 250px;
+    height: 250px;
+    border: 1px solid aqua;
+    border-radius: 2px;
+    margin-right: 10px;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.content {
+    margin: 10px;
+}
+
+.ico {
+    font-size: 250px;
+}

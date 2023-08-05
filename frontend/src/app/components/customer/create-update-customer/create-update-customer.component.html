@@ -1,0 +1,71 @@
+<button mat-button class="button" (click)="backClicked()">Volver</button>
+<h1 *ngIf="!this.formCreateUpdateCustomer.controls['id'].value else elseBlockTitle">Crear cliente</h1>
+<ng-template #elseBlockTitle>
+    <h1>Actualizar cliente</h1>
+</ng-template>
+<form class="formCustomer" [formGroup]="formCreateUpdateCustomer">
+    <table class="full-size" cellspacing="0">
+        <tr>
+            <td>
+                <mat-form-field class="full-size" appearance="fill">
+                    <mat-label>Nombres</mat-label>
+                    <input matInput autocomplete="off" formControlName="names">
+                    <mat-error *ngIf="f['names'].hasError('required')">Campo obligatorio</mat-error>
+                    <mat-error *ngIf="f['names'].hasError('minlength')">El nombre es muy corto</mat-error>
+                    <mat-error *ngIf="f['names'].hasError('maxlength')">El nombre es muy largo</mat-error>
+
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field class="full-size" appearance="fill">
+                    <mat-label>Apellidos</mat-label>
+                    <input matInput autocomplete="off" formControlName="surnames">
+                    <mat-error *ngIf="f['surnames'].hasError('required')">Campo obligatorio</mat-error>
+                    <mat-error *ngIf="f['surnames'].hasError('minlength')">El apellido es muy corto</mat-error>
+                    <mat-error *ngIf="f['surnames'].hasError('maxlength')">El apellido es muy largo</mat-error>
+
+                </mat-form-field>
+            </td>
+        </tr>
+    </table>
+    <mat-form-field class="full-size" appearance="fill">
+        <mat-label>Correo</mat-label>
+        <input type="email" matInput autocomplete="off" formControlName="email">
+        <mat-error *ngIf="f['email'].hasError('required')">Campo obligatorio</mat-error>
+        <mat-error *ngIf="f['email'].hasError('email')">No es un correo válido</mat-error>
+    </mat-form-field>
+    <table class="full-size" cellspacing="0">
+        <tr>
+            <td>
+                <mat-form-field class="full-size" appearance="fill">
+                    <mat-label>Fecha de nacimiento</mat-label>
+                    <input matInput [matDatepicker]="picker" autocomplete="off" formControlName="dateOfBirth"
+                        [max]="maxDate">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                    <mat-error *ngIf="f['dateOfBirth'].hasError('required')">Campo obligatorio</mat-error>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field class="full-size" appearance="fill">
+                    <mat-label>Región</mat-label>
+                    <mat-select [compareWith]="compareRegion" formControlName="region">
+                        <mat-option *ngFor="let region of regions" [value]="region">
+                            {{region.name}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="f['region'].hasError('required')">Campo obligatorio</mat-error>
+                </mat-form-field>
+            </td>
+        </tr>
+    </table>
+    <div class="container-button">
+        <button mat-button class="button" type="submit" (click)="createCustomer()"
+            *ngIf="!this.formCreateUpdateCustomer.controls['id'].value else elseBlock">Crear</button>
+        <ng-template #elseBlock>
+            <button mat-button class="button" type="submit" (click)="updateCustomer()">Actualizar</button>
+        </ng-template>
+    </div>
+
+</form>

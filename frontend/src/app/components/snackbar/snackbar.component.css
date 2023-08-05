@@ -1,0 +1,9 @@
+.containerSnack {
+    display: flex;
+}
+
+.data {
+    color: aqua;
+    flex: 1 1 auto;
+    align-self: center;
+}

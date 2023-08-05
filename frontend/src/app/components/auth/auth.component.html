@@ -1,0 +1,22 @@
+<h1>Iniciar sesión</h1>
+<form class="formAuth" [formGroup]="formAuth">
+    <mat-form-field appearance="fill">
+        <mat-label>Usuario</mat-label>
+        <input matInput autocomplete="off" formControlName="username">
+        <mat-error *ngIf="f['username'].hasError('required')">Campo obligatorio</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Contraseña</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="f['password'].hasError('required')">Campo obligatorio</mat-error>
+        <mat-error *ngIf="f['password'].hasError('minlength')" >La contraseña es muy corta</mat-error>
+    </mat-form-field>
+    <div class="container-button">
+        <button mat-button class="button" type="submit" [disabled]="!formAuth.valid" (click)="authUser()">Enviar</button>
+    </div>
+</form>

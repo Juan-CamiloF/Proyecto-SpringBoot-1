@@ -1,0 +1,192 @@
+/* You can add global styles to this file, and also import other style files */
+
+html {
+    min-height: 100%;
+    position: relative;
+    background-color: rgb(43, 43, 73);
+}
+
+h1 {
+    margin: 15px;
+    text-align: center;
+}
+
+h4 {
+    text-align: end;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    margin-bottom: 60px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    color: aqua;
+}
+
+/* Material elements */
+
+mat-dialog-container {
+    background: rgb(43, 43, 73) !important;
+    color: aqua !important;
+}
+
+.mat-focused .mat-form-field-label,
+mat-hint,
+mat-form-field {
+    color: aqua !important;
+}
+
+.mat-input-element:disabled {
+    color: rgb(150, 164, 177) !important;
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: aqua;
+}
+
+.mat-select-value {
+    color: aqua !important;
+}
+
+.mat-select-arrow {
+    color: aqua !important;
+}
+
+.mat-form-field-wrapper {
+    padding-bottom: 1.4em;
+}
+
+.mat-datepicker-toggle {
+    color: aqua;
+}
+
+mat-label {
+    color: aqua !important;
+}
+
+.mat-select-panel,
+.mat-autocomplete-panel {
+    background-color: rgb(66, 66, 116);
+}
+
+.mat-option {
+    color: aqua !important;
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+    color: rgb(116, 162, 202) !important;
+}
+
+.mat-datepicker-content {
+    background-color: rgb(66, 66, 116) !important;
+    color: aqua !important;
+}
+
+.mat-datepicker-content .mat-calendar-previous-button,
+.mat-calendar-body-cell-content,
+.mat-date-range-input-separator {
+    color: aqua !important;
+}
+
+.mat-calendar-body-disabled>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+    color: rgb(116, 162, 202) !important;
+}
+
+/* Forms and inputs */
+
+.full-size {
+    width: 100%;
+}
+
+.formAuth {
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.formCustomer {
+    min-width: 150px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Buttons */
+
+.button {
+    border: 1px solid aqua !important;
+    color: aqua !important;
+}
+
+.button:hover {
+    color: rgb(43, 43, 73) !important;
+    background: aqua !important;
+}
+
+.button[disabled] {
+    color: gray !important;
+}
+
+.container-button {
+    display: flex;
+    justify-content: center;
+}
+
+/* Tables */
+
+.table-list,
+mat-paginator {
+    width: 80%;
+    margin: 0 auto;
+    background: none !important;
+    border: 1px solid aqua !important;
+    border-radius: 3px;
+}
+
+mat-paginator,
+mat-button-wrapper,
+#mat-select-value {
+    color: aqua !important;
+}
+
+td,
+th {
+    color: aqua !important;
+}
+
+th {
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    border-bottom: 1px solid aqua !important;
+}
+
+.table-details {
+    border: 1px solid aqua;
+    color: white;
+    background-color: rgb(43, 43, 73);
+    width: 100%;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.DivEmptyData {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Components properties */
+
+.container {
+    display: flex;
+    max-width: 700px;
+    margin: 20px auto;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}

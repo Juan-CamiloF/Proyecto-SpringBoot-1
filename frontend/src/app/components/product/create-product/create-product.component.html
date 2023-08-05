@@ -1,0 +1,23 @@
+<button mat-button class="button" routerLink="/productos">Volver</button>
+<h1>Crear producto</h1>
+<div class="container">
+    <form class="formCustomer" [formGroup]="formCreateProduct">
+        <mat-form-field  class="full-size" appearance="fill">
+            <mat-label>Nombre</mat-label>
+            <input matInput autocomplete="off" formControlName="name">
+            <mat-error *ngIf="f['name'].hasError('required')">Campo obligatorio</mat-error>
+            <mat-error *ngIf="f['name'].hasError('minlength')">El nombre es muy corto</mat-error>
+            <mat-error *ngIf="f['name'].hasError('maxlength')">El nombre es muy largo</mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-size" appearance="fill">
+            <mat-label>Precio</mat-label>
+            <input matInput currencyMask autocomplete="off" formControlName="price">
+            <mat-error *ngIf="f['price'].hasError('required')">Campo obligatorio</mat-error>
+            <mat-error *ngIf="f['price'].hasError('min')">El precio debe ser mayor que 0</mat-error>
+            <mat-error *ngIf="f['price'].hasError('max')">El precio es muy alto</mat-error>
+        </mat-form-field>
+        <div class="container-button">
+            <button mat-button class="button" type="submit" (click)="createProduct()">Enviar</button>
+        </div>
+    </form>
+</div>

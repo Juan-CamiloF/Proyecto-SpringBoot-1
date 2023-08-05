@@ -1,0 +1,16 @@
+a {
+    border-right: 1px solid aqua;
+    border-top: 1px solid aqua;
+    width: 40%;
+    min-width: 150px;
+}
+
+a:hover {
+    color: rgb(43, 43, 73);
+    background: aqua;
+}
+
+mat-grid-list {
+    border-bottom: 2px solid aqua;
+    margin-bottom: 15px;
+}

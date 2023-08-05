@@ -1,0 +1,19 @@
+<mat-grid-list cols="9" rowHeight="50px">
+    <mat-grid-tile [colspan]="2" [rowspan]="2">
+        <a *ngIf="authService.sessionActive() && authService.hasRole('ROLE_USER')" routerLink="clientes" mat-button>Lista clientes</a>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="2" [rowspan]="2">
+        <a *ngIf="authService.sessionActive() && authService.hasRole('ROLE_ADMIN')" routerLink="cliente" mat-button>Crear clientes</a>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="2" [rowspan]="2">
+        <a *ngIf="authService.sessionActive() && authService.hasRole('ROLE_USER')" routerLink="productos" mat-button>Lista productos</a>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="2" [rowspan]="2">
+        <a *ngIf="authService.sessionActive() && authService.hasRole('ROLE_ADMIN')" routerLink="producto" mat-button>Crear productos</a>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <a routerLink="auth" mat-button *ngIf="!authService.sessionActive()">Iniciar sesión</a>
+        <a routerLink="auth" mat-button *ngIf="authService.sessionActive()" (click)="authService.signOff()">Cerrar
+            sesión</a>
+    </mat-grid-tile>
+</mat-grid-list>

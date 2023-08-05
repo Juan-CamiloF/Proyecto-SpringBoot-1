@@ -1,0 +1,20 @@
+.containerProduct {
+    margin: 10px auto;
+    width: 100%;
+}
+
+.formProduct {
+    min-width: 150px;
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.formProduct>mat-form-field {
+    margin: 0 3px;
+}
+
+.size-amount{
+    width: 80px;
+}
