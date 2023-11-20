@@ -1,4 +1,4 @@
-# Proyecto 1 - Springboot/Angular
+# Proyecto 1 - SpringBoot/Angular
 
 This repository contains a project developed using Spring Boot for the backend and Angular for the frontend. The system is designed to manage customers, allowing for the creation, editing, and deletion of customers, as well as the association of images with each customer. Additionally, invoices can be registered for each customer, including products that are also managed by the system.
 
